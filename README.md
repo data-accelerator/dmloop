@@ -27,9 +27,11 @@ mount /dev/mapper/$DM_DEVICE_LAYER_NAME /mnt/test
 ```shell
 mkdir build
 cd build
-#default configure is used for debug, don't execute the command printed in terminal
-	cmake  .. 
-#config debug is OFF, and ensure execute the command
+# default configure is used for debug, 
+# under this config, it will not execute the command printed in terminal
+# DEBUG mode is only for debug.
+ 	cmake  .. 
+#set DEBUG is OFF
 	cmake -D_DEBUG=OFF -D_EXEC=ON ..
 make
 sudo ./dmloop file_path source_device target_device_name sector_size
